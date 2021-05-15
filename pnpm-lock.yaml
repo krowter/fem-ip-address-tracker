@@ -1,0 +1,14 @@
+lockfileVersion: 5.3
+
+specifiers:
+  dotenv: ^9.0.2
+
+devDependencies:
+  dotenv: 9.0.2
+
+packages:
+
+  /dotenv/9.0.2:
+    resolution: {integrity: sha512-I9OvvrHp4pIARv4+x9iuewrWycX6CcZtoAu1XrzPxc5UygMJXJZYmBsynku8IkrJwgypE5DGNjDPmPRhDCptUg==}
+    engines: {node: '>=10'}
+    dev: true

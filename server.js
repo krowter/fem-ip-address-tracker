@@ -1,14 +1,14 @@
 const https = require("http");
 
 const { serveStaticFiles } = require("./routes/root");
+const { handleApiRequest } = require("./routes/api");
 
 const options = {};
 
 https
   .createServer(options, (req, res) => {
     if (req.url.startsWith("/api")) {
-      res.writeHead(200);
-      res.end("OK");
+      handleApiRequest(req, res);
     }
 
     serveStaticFiles(req, res);
