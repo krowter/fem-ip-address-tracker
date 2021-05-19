@@ -1,16 +1,23 @@
-const https = require("http");
+const fastify = require("fastify")();
+const path = require("path");
 
-const { serveStaticFiles } = require("./routes/root");
-const { handleApiRequest } = require("./routes/api");
+const PORT = process.env.PORT || 3000;
 
-const options = {};
+const apiRoute = require("./routes/api");
 
-https
-  .createServer(options, (req, res) => {
-    if (req.url.startsWith("/api")) {
-      handleApiRequest(req, res);
-    }
+fastify.post("/api/locate-address", {}, apiRoute);
 
-    serveStaticFiles(req, res);
-  })
-  .listen(8000);
+fastify.register(require("fastify-static"), {
+  root: path.join(__dirname, "static"),
+});
+
+const start = async () => {
+  try {
+    await fastify.listen(PORT);
+  } catch (error) {
+    fastify.log.error(error);
+    process.exit(1);
+  }
+};
+
+start();
