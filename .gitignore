@@ -1,6 +1,10 @@
 #environment variables
 .env
 
+# generated css files
+*.css
+*.css.map
+
 # modules
 node_modules
 

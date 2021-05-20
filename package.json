@@ -1,9 +1,18 @@
 {
-	"devDependencies": {
-		"dotenv": "^9.0.2"
-	},
-	"dependencies": {
-		"fastify": "^3.15.1",
-		"fastify-static": "^4.0.1"
-	}
+  "scripts": {
+    "compile-sass:dev": "sass --watch assets/sass:static",
+    "compile-sass:prod": "sass --no-source-map assets/sass:static",
+    "build": "pnpm compile-sass",
+    "start": "node server.js",
+    "dev": "pnpm compile-sass:dev && nodemon server.js"
+  },
+  "devDependencies": {
+    "dotenv": "^9.0.2",
+    "nodemon": "^2.0.7",
+    "sass": "^1.32.13"
+  },
+  "dependencies": {
+    "fastify": "^3.15.1",
+    "fastify-static": "^4.0.1"
+  }
 }

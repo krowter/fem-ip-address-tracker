@@ -1,0 +1,51 @@
+header 
+    align-items: center
+    background: url(./images/pattern-bg.png) no-repeat 
+    background-size: cover
+    display: flex
+    flex-direction: column
+
+    height: 18rem
+
+    h1
+        color: white
+        font-weight: 500
+        margin: 0
+
+    form
+        $padding: 1rem 1.5rem
+        $rounded: 0.75rem
+
+        display: flex
+        width: 30rem
+
+        input
+            border: none
+            border-top-left-radius: $rounded
+            border-bottom-left-radius: $rounded
+            flex: 1
+            padding: $padding
+        
+        button
+            background: $very-dark-grey url(./images/icon-arrow.svg) center no-repeat
+            border: none
+            border-top-right-radius: $rounded
+            border-bottom-right-radius: $rounded
+            padding: $padding
+
+
+
+#ip-address-details
+    background: white
+
+
+.attribution 
+    font-size: 11px
+    text-align: center
+
+.attribution a 
+    color: hsl(228, 45%, 44%)
+
+#mapid 
+    height: calc(100vh - 18rem)
+      
