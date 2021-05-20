@@ -2,7 +2,7 @@
   "scripts": {
     "compile-sass:dev": "sass --watch assets/sass:static",
     "compile-sass:prod": "sass --no-source-map assets/sass:static",
-    "build": "pnpm compile-sass",
+    "build": "pnpm compile-sass:prod",
     "start": "node server.js",
     "dev": "pnpm compile-sass:dev && nodemon server.js"
   },
