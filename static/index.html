@@ -31,8 +31,8 @@
       <form onsubmit="handleFormSubmit(event)" class="form">
         <input
           name="address-input"
-          class="address-input"
-          placeholder="Search for any IP address or domain"
+          id="address-input"
+          placeholder="Search for any IP address"
           aria-placeholder="example 62.127.28.92"
         />
         <button class="submit-button" type="submit"></button>
@@ -50,6 +50,7 @@
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin=""
     ></script>
+    <script src="./helpers.js"></script>
     <script src="./script.js"></script>
     <!-- get current IP address and call getIP() in script.js -->
     <script src="https://api.ipify.org?format=jsonp&callback=displayCurrentIp"></script>
