@@ -19,18 +19,17 @@ const getIpLocation = (ipAddress) => {
 };
 
 module.exports = async (req, res) => {
-  console.log("endpoint hit!");
   try {
     const requestBody = JSON.parse(req.body);
 
     const { ipAddress } = requestBody;
-    console.log({ ipAddress });
+
     if (!ipAddress) {
       res.status(401);
       res.send("Request body must contain valid IP address");
     } else {
       const ipLocation = await getIpLocation(ipAddress);
-      console.log({ ipLocation });
+
       res.status(200);
       res.send(ipLocation);
     }
