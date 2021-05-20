@@ -1,6 +1,7 @@
 $header-height: 20rem
 $header-offset: 5rem
 
+
 header 
     align-items: center
     background: url(./images/pattern-bg.png) no-repeat 
@@ -69,7 +70,7 @@ header
 
         .detail:not(:first-of-type)
             border-left: solid 2px $light-grey
-            padding-left: 2rem
+            padding-left: 1rem
 
 #map
     height: calc(100vh - #{$header-height} + #{$header-offset})
@@ -93,5 +94,37 @@ header
                 margin-top: 1rem
                 padding-left: 0
             
-            .detail-title
+            .detail-title,
+            .detail-value
                 text-align: center
+
+#spinner
+    display: none
+    position: fixed
+    background: rgba(25,255,25,0.3)
+    z-index: 2
+    height: 100%
+    width: 100%
+
+#spinner::after
+    position: absolute
+    border-radius: 50%
+    border: solid transparent 10px
+    border-top: solid white 10px
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    content: ""
+    background:red
+    height: 60px
+    width: 60px
+
+    animation: name infinite 1.3s linear
+
+
+@keyframes name
+    0%
+        transform: translate(-50%, -50%) rotate(0deg)
+    100%
+        transform: translate(-50%, -50%) rotate(360deg)
+        

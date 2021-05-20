@@ -50,17 +50,8 @@ const getIPDetails = (ip, callback) => {
     .then((res) => callback(res));
 };
 
-const displayMap = ({ location: { lat, lng } }, zoom = 20) => {
-  L.map("map", {
-    center: [lat, lng],
-    zoom,
-    layers: [
-      L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
-        attribution:
-          '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      }),
-    ],
-  });
+const displayMap = (map, { location: { lat, lng } }) => {
+  map.setView(L.latLng(lat, lng));
 };
 
 const initialDetails = {
@@ -74,16 +65,40 @@ const initialDetails = {
   },
 };
 
+const toggleSpinnerVisibility = (spinner, isVisible) => {
+  spinner.focus();
+  spinner.style.display = isVisible ? "block" : "none";
+  spinner.setAttribute("aria-hidden", isVisible);
+};
+
+const initMap = (id, { lat, lng }, zoom) => {
+  return L.map(id, {
+    center: [lat, lng],
+    zoom,
+    layers: [
+      L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+        attribution:
+          '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      }),
+    ],
+  });
+};
+
 const ipAddressDetailsContainer = document.getElementById("ip-address-details");
+const spinner = document.getElementById("spinner");
+
+const map = initMap("map", { lat: 0, lng: 0 }, 20);
 
 const displayCurrentIp = ({ ip }) => {
+  toggleSpinnerVisibility(spinner, true);
   const callback = (ipDetails) => {
+    toggleSpinnerVisibility(spinner, false);
     displayDetails(
       ipAddressDetailsContainer,
       createIpAddressDetails(ipDetails)
     );
 
-    displayMap(ipDetails);
+    displayMap(map, ipDetails);
   };
 
   getIPDetails(ip, callback);

@@ -27,8 +27,10 @@
   <body>
     <header>
       <h1>IP Address Tracker</h1>
-      <form class="form">
+      <div id="spinner"></div>
+      <form onsubmit="handleFormSubmit(event)" class="form">
         <input
+          name="address-input"
           class="address-input"
           placeholder="Search for any IP address or domain"
           aria-placeholder="example 62.127.28.92"
@@ -50,6 +52,6 @@
     ></script>
     <script src="./script.js"></script>
     <!-- get current IP address and call getIP() in script.js -->
-    <!-- <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script> -->
+    <script src="https://api.ipify.org?format=jsonp&callback=displayCurrentIp"></script>
   </body>
 </html>
