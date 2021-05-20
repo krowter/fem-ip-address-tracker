@@ -1,6 +1,8 @@
 $header-height: 20rem
 $header-offset: 5rem
 
+// TOP BACKGRDOUN, TITLE, INPUT SEARCH 
+
 header 
     align-items: center
     background: url(./images/pattern-bg.png) no-repeat 
@@ -72,6 +74,9 @@ header
             padding-left: 1rem
 
 
+// TOP BACKGRDOUN, TITLE, INPUT SEARCH
+// MOBILE VIEW
+
 @media screen and ( max-width: 560px )
     form
         max-width: calc(100% - 2rem)
@@ -93,10 +98,15 @@ header
             .detail-value
                 text-align: center
 
+
+// MAP
+
 #map
     height: calc(100vh - #{$header-height} + #{$header-offset})
     z-index: 0
 
+
+// COLOR OVERLAY FOR SPINNER
 
 #spinner
     display: none
@@ -105,6 +115,8 @@ header
     z-index: 2
     height: 100%
     width: 100%
+
+// SPINNER
 
 #spinner::after
     animation: name infinite 1.1s linear
