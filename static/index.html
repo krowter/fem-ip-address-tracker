@@ -32,22 +32,32 @@
 
       <div id="spinner"></div>
 
-      <form onsubmit="handleFormSubmit(event)" class="form">
+      <form
+        title="search IP address details"
+        onsubmit="handleFormSubmit(event)"
+        class="form"
+      >
         <input
           name="address-input"
           id="address-input"
+          title="Enter the IP address"
           placeholder="Search for any IP address"
           aria-placeholder="example 62.127.28.92"
+          type="text"
         />
-        <button class="submit-button" type="submit"></button>
+        <button
+          title="begin search"
+          class="submit-button"
+          type="submit"
+        ></button>
       </form>
 
-      <section id="ip-address-details-wrapper" class="container">
+      <div id="ip-address-details-wrapper" class="container">
         <div id="ip-address-details"></div>
-      </section>
+      </div>
     </header>
 
-    <section id="map">IP Address Location Timezone UTC ISP</section>
+    <div id="map">IP Address Location Timezone UTC ISP</div>
 
     <!-- add offset value dynamically using the API -->
     <script
