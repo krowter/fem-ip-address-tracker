@@ -27,7 +27,7 @@
   <body>
     <header>
       <h1>IP Address Tracker</h1>
-      <form class="form container">
+      <form class="form">
         <input
           class="address-input"
           placeholder="Search for any IP address or domain"
@@ -35,11 +35,13 @@
         />
         <button class="submit-button" type="submit"></button>
       </form>
+
+      <section id="ip-address-details-wrapper" class="container">
+        <div id="ip-address-details"></div>
+      </section>
     </header>
 
-    <div id="ip-address-details" class="container"></div>
-
-    <section id="mapid">IP Address Location Timezone UTC ISP</section>
+    <section id="map">IP Address Location Timezone UTC ISP</section>
     <!-- add offset value dynamically using the API -->
     <script
       src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
