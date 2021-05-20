@@ -17,6 +17,8 @@
       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
       crossorigin=""
     />
+
+    <!-- GOOGLE FONT -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
@@ -27,7 +29,9 @@
   <body>
     <header>
       <h1>IP Address Tracker</h1>
+
       <div id="spinner"></div>
+
       <form onsubmit="handleFormSubmit(event)" class="form">
         <input
           name="address-input"
@@ -44,14 +48,17 @@
     </header>
 
     <section id="map">IP Address Location Timezone UTC ISP</section>
+
     <!-- add offset value dynamically using the API -->
     <script
       src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin=""
     ></script>
+
     <script src="./helpers.js"></script>
     <script src="./script.js"></script>
+
     <!-- get current IP address and call getIP() in script.js -->
     <script src="https://api.ipify.org?format=jsonp&callback=displayCurrentIp"></script>
   </body>
