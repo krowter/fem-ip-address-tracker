@@ -3,50 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
-
     <title>Frontend Mentor | IP Address Tracker</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
-    <link rel="stylesheet" href="./style.css" />
+    <!-- LEAFLET CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    IP Address Tracker Search for any IP address or domain IP Address Location
-    Timezone UTC
-    <!-- add offset value dynamically using the API -->
-    ISP
+    <header>
+      <h1>IP Address Tracker</h1>
+      <form class="form container">
+        <input
+          class="address-input"
+          placeholder="Search for any IP address or domain"
+          aria-placeholder="example 62.127.28.92"
+        />
+        <button class="submit-button" type="submit"></button>
+      </form>
+    </header>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
-    <script>
-      fetch("/api/locate-address", {
-        method: "POST",
-        body: JSON.stringify({
-          ipAddress: "1.1.1.1",
-        }),
-      })
-        .then((res) => res.json())
-        .then((res) => console.log({ res }));
-    </script>
+    <div id="ip-address-details" class="container"></div>
+
+    <section id="mapid">IP Address Location Timezone UTC ISP</section>
+    <!-- add offset value dynamically using the API -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script src="./script.js"></script>
+    <!-- get current IP address and call getIP() in script.js -->
+    <!-- <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script> -->
   </body>
 </html>
